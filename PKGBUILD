@@ -40,5 +40,9 @@ build() {
 package() {
     cd "${srcdir}/${pkgname}"
     make INSTALL_ROOT="$pkgdir/" install
+    # Remove tests and empty dirs
+    rm -rf "$pkgdir/usr/lib/libresourceqt-qt5-tests"
+    rm -rf "$pkgdir/usr/share/doc"
+    rm -rf "$pkgdir/usr/share/man"
 }
  
